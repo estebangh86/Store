@@ -1,0 +1,6 @@
+framework module Pods_Rokk3rStore {
+  umbrella header "Pods-Rokk3rStore-umbrella.h"
+
+  export *
+  module * { export * }
+}
