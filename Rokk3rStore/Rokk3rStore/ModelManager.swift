@@ -99,7 +99,7 @@ class ModelManager {
         return resultsByType
     }
     
-    class func find(query: String) -> (Types, [String]) {
+    class func find(query: String) -> (Types, Array<String>) {
         
         let brands = getBrands()
         let clothingTypes = getClothingTypes()
@@ -111,7 +111,7 @@ class ModelManager {
         
         if bs.count > 0 {
             
-            var brandArray = [String]()
+            var brandArray = Array<String>()
             
             for b in bs {
                 
@@ -122,7 +122,7 @@ class ModelManager {
         }
         else if cs.count > 0 {
             
-            var clothingTypeArray = [String]()
+            var clothingTypeArray = Array<String>()
             
             for c in cs {
                 

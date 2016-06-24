@@ -39,7 +39,7 @@ class SearchViewController: UIViewController {
         
         let resultsVC = segue.destinationViewController as! ResultsTableViewController
         
-        resultsVC.items = sender as! Dictionary<String, Array<String>>
+        resultsVC.items = sender as? Dictionary<String, Array<String>>
     }
 
 }

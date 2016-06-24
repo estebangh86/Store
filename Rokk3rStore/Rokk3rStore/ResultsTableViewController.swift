@@ -52,10 +52,12 @@ class ResultsTableViewController: UITableViewController {
         if (indexPath.section == 0) {
             
             item = items!["Brand"]![indexPath.row]
-        } else if(indexPath.section == 1) {
+        }
+        else if (indexPath.section == 1) {
             
             item = items!["Clothing Type"]![indexPath.row]
-        } else {
+        }
+        else {
             
             item = items!["Result Query"]![indexPath.row]
         }
