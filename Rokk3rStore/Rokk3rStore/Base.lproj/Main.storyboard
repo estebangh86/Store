@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--Rokk3r Store-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="Rokk3rStore" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,7 +43,7 @@
                             <constraint firstItem="bic-mH-0up" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="jra-sf-5gQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UQu-i0-m73"/>
+                    <navigationItem key="navigationItem" title="Rokk3r Store" id="UQu-i0-m73"/>
                     <connections>
                         <outlet property="searchField" destination="bic-mH-0up" id="zkM-O2-tvh"/>
                         <segue destination="2Sb-5L-HVH" kind="show" identifier="showResults" id="hhi-eS-bhn"/>

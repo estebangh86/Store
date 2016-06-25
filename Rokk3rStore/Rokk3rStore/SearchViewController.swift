@@ -25,14 +25,25 @@ class SearchViewController: UIViewController {
         
         let searchQueries = searchField.text?.capitalizedString
         
-        let searchQueriesArray = searchQueries!.characters.split{$0 == " "}.map(String.init)
-        let searchSet = Set<String>(searchQueriesArray)
-        
-        let queriesArray = Array(searchSet)
-        
-        let results = ModelManager.search(queriesArray)
-        
-        performSegueWithIdentifier("showResults", sender: results)
+        if searchQueries?.characters.count > 0 {
+            
+            let searchQueriesArray = searchQueries!.characters.split{$0 == " "}.map(String.init)
+            let searchSet = Set<String>(searchQueriesArray)
+            
+            let queriesArray = Array(searchSet)
+            
+            let results = ModelManager.search(queriesArray)
+            
+            performSegueWithIdentifier("showResults", sender: results)
+        }
+        else {
+            
+            let alert = UIAlertController(title: "Empty search", message: "Please enter something to search for", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default, handler: nil))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

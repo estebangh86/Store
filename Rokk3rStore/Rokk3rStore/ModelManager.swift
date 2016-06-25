@@ -92,9 +92,9 @@ class ModelManager {
         
         var resultsByType = Dictionary<String, Array<String>>()
         
-        resultsByType["Brand"] = brandsFound
-        resultsByType["Clothing Type"] = clothingTypesFound
-        resultsByType["Result Query"] = resultQuery
+        resultsByType["Brand"] = Array(Set<String>(brandsFound))
+        resultsByType["Clothing Type"] = Array(Set<String>(clothingTypesFound))
+        resultsByType["Result Query"] = Array(Set<String>(resultQuery))
         
         return resultsByType
     }
@@ -111,25 +111,11 @@ class ModelManager {
         
         if bs.count > 0 {
             
-            var brandArray = Array<String>()
-            
-            for b in bs {
-                
-                brandArray.append(b.name)
-            }
-            
-            return (.Brand, brandArray)
+            return (.Brand, bs.map { $0.name })
         }
         else if cs.count > 0 {
             
-            var clothingTypeArray = Array<String>()
-            
-            for c in cs {
-                
-                clothingTypeArray.append(c.name)
-            }
-            
-            return (.ClothingType, clothingTypeArray)
+            return (.ClothingType, cs.map { $0.name })
         }
         else {
             

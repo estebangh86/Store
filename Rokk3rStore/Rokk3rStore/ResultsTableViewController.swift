@@ -16,6 +16,7 @@ class ResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Results"
     }
     
     override func didReceiveMemoryWarning() {
